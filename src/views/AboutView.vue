@@ -1,15 +1,5 @@
-<script setup>
-</script>
-
-<script lang="ts">
-export default {
-    data() {
-        return {
-            heading2: 'text-4xl font-extrabold mb-4',
-            uli: 'space-y-1 list-disc list-inside',
-        };
-    },
-}
+<script setup lang="ts">
+import { heading2, uli } from '../App.vue';
 </script>
 
 
