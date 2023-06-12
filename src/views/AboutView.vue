@@ -4,6 +4,8 @@ import { heading2, uli } from '../App.vue';
 
 
 <template>
+    <h2 class="text-2xl font-semibold mb-2">About</h2>
+
     <div class="p-5">
         <h2 :class="heading2">Summary</h2>
         <p class="mb-3">A tool for recording ideas. Dates attached, archiving, linking to other ideas, tagging.</p>

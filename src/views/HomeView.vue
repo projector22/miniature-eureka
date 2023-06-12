@@ -1,3 +1,3 @@
 <template>
-    <div class="text-3xl font-bold underline">Welcome to Miniature Eureka</div>
+    <h2 class="text-2xl font-semibold mb-2">Home</h2>
 </template>
