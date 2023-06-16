@@ -1,24 +1,153 @@
 <template>
-  <h2 class="text-2xl font-semibold mb-2">New Idea</h2>
+  <h2 class="text-3xl mb-1">Title</h2>
+  <input type="text" name="" id="" class="
+    rounded-md
+    p-2
+    mr-3
+    flex-grow
+    shadow-sm
+    shadow-gray-300
+    w-full
+    ">
+  <hr class="my-5">
 
-  <div class="mb-5">
-        <label for="idea-title">Title</label>
-        <br>
-        <input type="text" class="w-3/5 rounded-md p-2 text-black ml-4 mr-2" name="idea-title" id="idea-title">
-      </div>
+  <h2 class="text-3xl mb-1">Summary</h2>
+  <textarea name="" id="" rows="10" class="
+    w-full
+    rounded-md
+    p-2
+    shadow-sm
+    shadow-gray-300
+    "></textarea>
+  <hr class="my-5">
 
-      <div class="mb-5">
-        <label for="idea-details">Details</label>
-        <br>
-        <textarea name="idea-details" class="w-3/5 rounded-md p-2 text-black ml-4 mr-2" id="idea-details" cols="30" rows="10"></textarea>
-      </div>
+  <h2 class="text-3xl mb-1">Features</h2>
+  <div class="
+    w-full
+    flex
+    ">
+    <input type="text" name="" id="" class="
+      rounded-md
+      p-2
+      mr-3
+      flex-grow
+      shadow-sm
+      shadow-gray-300
+      ">
+    <button class="
+      bg-green-600
+      text-white
+      rounded-md
+      p-2
+      shadow-sm
+      shadow-gray-300
+      ">Add</button>
+  </div>
 
-      <div class="mb-5">
-        <label for="idea-tags">Tags</label>
-        <br>
-        <input type="text" class="w-3/5 rounded-md p-2 text-black ml-4 mr-2" name="idea-tags" id="idea-tags">
-      </div>
-  
-      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">Save</button>
+  <hr class="my-5">
+
+  <h2 class="text-3xl mb-1">Tooling</h2>
+  <div class="
+    w-full
+    flex
+    ">
+    <input type="text" name="" id="" class="
+      rounded-md
+      p-2
+      mr-3
+      flex-grow
+      shadow-sm
+      shadow-gray-300
+      ">
+    <button class="
+      bg-green-600
+      text-white
+      rounded-md
+      p-2
+      shadow-sm
+      shadow-gray-300
+      ">Add</button>
+  </div>
+  <hr class="my-5">
+
+  <h2 class="text-3xl mb-1">Links</h2>
+  <div class="
+    w-full
+    flex
+    ">
+    <input type="text" name="" id="" class="
+      rounded-md
+      p-2
+      mr-3
+      flex-grow
+      shadow-sm
+      shadow-gray-300
+      ">
+    <button class="
+      bg-green-600
+      text-white
+      rounded-md
+      p-2
+      shadow-sm
+      shadow-gray-300
+      ">Add</button>
+  </div>
+  <hr class="my-5">
+
+  <h2 class="text-3xl mb-1">SWOT</h2>
+  <div class="
+    grid
+    grid-cols-2
+    grid-rows-2
+    ">
+    <div class="p-2">
+      <h3 class="text-2xl">Strengths</h3>
+      <textarea name="" id="" rows="10" class="
+            rounded-md
+      p-2
+      mr-3
+      flex-grow
+      shadow-sm
+      shadow-gray-300
+      w-full
+      "></textarea>
+    </div>
+    <div class="p-2">
+      <h3 class="text-2xl">Weaknesses</h3>
+      <textarea name="" id="" rows="10" class="
+              rounded-md
+      p-2
+      mr-3
+      flex-grow
+      shadow-sm
+      shadow-gray-300
+      w-full
+        "></textarea>
+    </div>
+    <div class="p-2">
+      <h3 class="text-2xl">Opportunities</h3>
+      <textarea name="" id="" rows="10" class="
+              rounded-md
+      p-2
+      mr-3
+      flex-grow
+      shadow-sm
+      shadow-gray-300
+      w-full
+        "></textarea>
+    </div>
+    <div class="p-2">
+      <h3 class="text-2xl">Threats</h3>
+      <textarea name="" id="" rows="10" class="
+              rounded-md
+      p-2
+      mr-3
+      flex-grow
+      shadow-sm
+      shadow-gray-300
+      w-full
+        "></textarea>
+    </div>
+  </div>
 </template>
   
