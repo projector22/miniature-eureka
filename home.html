@@ -6,26 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Template</title>
   <link rel="stylesheet" href="dist/output.css">
+  <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </head>
 
-<body class="bg-gray-800 text-white min-h-screen flex flex-col
+<body class="bg-gray-200  min-h-screen flex flex-col
 ">
-  <header class="h-20 p-4 bg-green-900
+  <header class="h-20 bg-blue-400
+  shadow-md shadow-gray-950
+  text-white
   ">
     <div class="grid grid-cols-3 w-full
     ">
-      <div>
-        <h1>Eureka Ideas Management</h1>
+      <div class="
+      p-3
+      ">
+        <h1 class="font-bold text-2xl">Eureka</h1>
+        <small>Ideas Management</small>
       </div>
-      <div></div>
-      <div>
-        <nav>
-          <ul>
-            <li><a href="/settings">Settings</a></li>
-            <li><a href="/account">Account</a></li>
-            <li><a href="/logout">Logout</a></li>
-          </ul>
-        </nav>
+      <div class="
+      text-black
+      flex
+      items-center
+      justify-center
+      ">
+        <input type="search" placeholder="Search" name="" id="" class="
+        p-2
+        rounded-xl
+        w-full
+        shadow-sm shadow-gray-950
+        ">
+      </div>
+      <div class="
+      flex
+      flex-row-reverse
+      items-center
+      p-5
+      ">
+        <a href="javascript:void(0)">
+          <span class="iconify w-10 h-10" data-icon="mdi-cog-outline"></span>
+        </a>
+
+        <!-- <nav> -->
+        <!-- <ul> -->
+        <!-- <li><a href="/settings">Settings</a></li> -->
+        <!-- <li><a href="/account">Account</a></li> -->
+        <!-- <li><a href="/logout">Logout</a></li> -->
+        <!-- </ul> -->
+        <!-- </nav> -->
       </div>
     </div>
   </header>
@@ -37,14 +64,16 @@
     ">
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/add">Add</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Add</a></li>
         </ul>
       </nav>
     </aside>
 
-    <section class="flex-grow p-4 bg-slate-600
+    <section class="flex-grow p-4 bg-blue-200
     mt-12
+    rounded-md
+    shadow-inner 
     ">
       Contains the main body of the page.
     </section>
