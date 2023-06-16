@@ -15,7 +15,7 @@
 
             <div class="flex flex-row-reverse items-center p-5">
                 <a href="javascript:void(0)">
-                    <span class="iconify w-10 h-10" data-icon="mdi-cog-outline"></span>
+                    <svg-icon type="mdi" :path="path"></svg-icon>
                 </a>
 
                 <!-- <nav> -->
@@ -30,3 +30,23 @@
         </div>
     </header>
 </template>
+
+
+
+  
+<script lang="ts">
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiCogOutline } from '@mdi/js';
+
+export default {
+    name: "my-component",
+    components: {
+        SvgIcon
+    },
+    data() {
+        return {
+            path: mdiCogOutline,
+        }
+    }
+}
+</script>

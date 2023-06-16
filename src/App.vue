@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import FooterBar from './components/FooterBar.vue';
-import MainElement from './components/MainElement.vue';
-import TopBar from './components/TopBar.vue';
+import FooterBar from './layout/FooterBar.vue';
+import MainElement from './layout/MainElement.vue';
+import TopBar from './layout/TopBar.vue';
 </script>
-
-
-
 
 <template>
     <div id="wrapper" class="bg-gray-200  min-h-screen flex flex-col">
@@ -14,13 +11,6 @@ import TopBar from './components/TopBar.vue';
         <FooterBar />
     </div>
 </template>
-    <!-- <header>
-        <h1 class="text-4xl font-bold mb-3">Minature Eureka Ideas Management</h1>
-        <NavBar />
-    </header>
-    <main>
-        <RouterView />
-    </main> -->
 
 
 <script lang="ts">
