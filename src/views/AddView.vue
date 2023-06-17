@@ -1,3 +1,13 @@
+<script setup lang="ts">
+  import AddButton from '@/components/buttons/AddButton.vue';
+
+
+
+  const basicButtonClick = () =>  {
+    console.log("Clicked here")
+  }
+</script>
+
 <template>
   <h2 class="text-3xl mb-1">Title</h2>
   <input type="text" name="" id="" class="
@@ -34,14 +44,7 @@
       shadow-sm
       shadow-gray-300
       ">
-    <button class="
-      bg-green-600
-      text-white
-      rounded-md
-      p-2
-      shadow-sm
-      shadow-gray-300
-      ">Add</button>
+      <AddButton @click="basicButtonClick"/>
   </div>
 
   <hr class="my-5">
@@ -59,14 +62,7 @@
       shadow-sm
       shadow-gray-300
       ">
-    <button class="
-      bg-green-600
-      text-white
-      rounded-md
-      p-2
-      shadow-sm
-      shadow-gray-300
-      ">Add</button>
+      <AddButton @click="basicButtonClick"/>
   </div>
   <hr class="my-5">
 
@@ -83,14 +79,7 @@
       shadow-sm
       shadow-gray-300
       ">
-    <button class="
-      bg-green-600
-      text-white
-      rounded-md
-      p-2
-      shadow-sm
-      shadow-gray-300
-      ">Add</button>
+      <AddButton @click="basicButtonClick"/>
   </div>
   <hr class="my-5">
 
