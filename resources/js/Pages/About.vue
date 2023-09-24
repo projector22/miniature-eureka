@@ -8,8 +8,8 @@ const props = defineProps({
 </script>
 
 <template>
-    <h1>Eureka - {{ name }}</h1>
-    <Link href="/about" type="button" class="btn btn-success">About</Link>
+    <h1>About - {{ name }}</h1>
+    <Link href="/" type="button" class="btn btn-success">Home</Link>
 </template>
 
 <style scoped></style>

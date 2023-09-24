@@ -18,3 +18,8 @@ Route::get('/', function () {
     // return view('welcome');
     return Inertia::render('Home', ['name' => 'James T Kirk']);
 });
+
+Route::get('/about', function () {
+    // return view('welcome');
+    return Inertia::render('About', ['name' => 'James T Kirk']);
+});

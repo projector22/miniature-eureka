@@ -7,6 +7,7 @@
     @inertiaHead
   </head>
   <body>
+    <head>The Top Area</head>
     @inertia
   </body>
 </html>
