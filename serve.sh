@@ -1,0 +1,1 @@
+php artisan serve --host 100.125.59.40
