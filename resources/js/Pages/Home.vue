@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { incNum } from '@/components/counter';
-import { Link } from '@inertiajs/vue3';
 import { ref } from 'vue'
+import Layout from '@/Shared/TheLayout.vue'
 
 const props = defineProps({
     name: String,
@@ -14,10 +14,11 @@ const inc = () => incNum(num)
 </script>
 
 <template>
-    <h1>Eureka - {{ name }}</h1>
-    <Link href="/about" type="button" class="btn btn-success">About</Link>
-
-    <button type="button" class="btn btn-primary ms-4" @click="inc">Increase: {{ num }}</button>
+    <Layout>
+        <h1>Eureka - {{ name }}</h1>
+    
+        <button type="button" class="btn btn-primary ms-4" @click="inc">Increase: {{ num }}</button>
+    </Layout>
 </template>
 
 <style scoped></style>
