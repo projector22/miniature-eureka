@@ -15,11 +15,17 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
     return Inertia::render('Home', ['name' => 'James T Kirk']);
-});
+})->name('home');
 
 Route::get('/about', function () {
-    // return view('welcome');
     return Inertia::render('About', ['name' => 'James T Kirk']);
+});
+
+Route::get('/playground', function () {
+    return Inertia::render('Playground', []);
+})->name('playground');
+
+Route::post('/save-idea', function () {
+    return to_route('home');
 });

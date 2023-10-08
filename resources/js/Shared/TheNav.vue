@@ -9,6 +9,10 @@ const links = [
         text: 'About',
         link: '/about',
     },
+    {
+        text: 'Playground',
+        link: '/playground',
+    },
 ]
 
 </script>
