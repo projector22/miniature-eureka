@@ -15,7 +15,7 @@
   @inertiaHead
 </head>
 
-<body>
+<body data-bs-theme="dark">
   @inertia
 </body>
 
