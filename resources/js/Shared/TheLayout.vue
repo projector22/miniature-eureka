@@ -1,73 +1,37 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3'
+import { links } from '@/Shared/LeftNav'
+import { computed, ref } from 'vue'
 
-const links = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'About',
-    link: '/about'
-  },
-  {
-    text: 'Playground',
-    link: '/playground'
-  }
-]
+const darkMode = ref(true)
+const modeIcon = computed(() => (darkMode.value ? 'bi-sun' : 'bi-moon'))
+const handleColourModeChange = () => {
+  darkMode.value = !darkMode.value
+  const bodyElement = document.querySelector('body') as HTMLBodyElement
+  bodyElement.dataset.bsTheme = darkMode.value ? 'dark' : 'light'
+}
 </script>
 
 <template>
-  <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <i class="bi bi-lightbulb-fill"></i>
-    <Link class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="/">
-      Miniature Eureka
-    </Link>
-
-    <ul class="navbar-nav flex-row d-md-none">
-      <li class="nav-item text-nowrap">
-        <button
-          class="nav-link px-3 text-white"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSearch"
-          aria-controls="navbarSearch"
-          aria-expanded="false"
-          aria-label="Toggle search"
-        >
-          <svg class="bi">
-            <use xlink:href="#search" />
-          </svg>
-        </button>
-      </li>
-      <li class="nav-item text-nowrap">
-        <button
-          class="nav-link px-3 text-white"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#sidebarMenu"
-          aria-controls="sidebarMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <svg class="bi">
-            <use xlink:href="#list" />
-          </svg>
-        </button>
-      </li>
-    </ul>
-
-    <div id="navbarSearch" class="navbar-search w-100 collapse">
-      <input
-        class="form-control w-100 rounded-0 border-0"
-        type="text"
-        placeholder="Search"
-        aria-label="Search"
-      />
+  <!-- HEADER -->
+  <header class="navbar flex-md-nowrap shadow px-3">
+    <div>
+      <Link class="navbar-brand col-md-3 col-lg-2 fs-4" href="/">
+        <i class="bi bi-lightbulb-fill"></i>
+        Miniature Eureka
+      </Link>
+    </div>
+    <div>
+      <button type="button" class="btn btn-link">
+        <i class="bi" :class="modeIcon" @click="handleColourModeChange()"></i>
+      </button>
     </div>
   </header>
+
+  <!-- MAIN BODY -->
   <div class="container-fluid page-body">
     <div class="row">
+      <!-- LEFT SIDEBAR -->
       <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
         <div
           class="offcanvas-md offcanvas-end bg-body-tertiary"
@@ -110,10 +74,14 @@ const links = [
           </div>
         </div>
       </div>
+
+      <!-- RIGHT MAIN SECTION -->
       <section class="col-md-9 ms-sm-auto col-lg-10 px-md-4 d-flex flex-column">
         <main class="flex-grow-1">
           <slot />
         </main>
+
+        <!-- FOOTER -->
         <footer>&copy; Gareth Palmer {{ new Date().getFullYear() }}</footer>
       </section>
     </div>
