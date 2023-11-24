@@ -6,6 +6,6 @@
     flex-direction: column;
 }
 
-#app > .page-body {
+#app>.page-body {
     flex-grow: 1;
 }
