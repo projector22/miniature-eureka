@@ -10,6 +10,11 @@ const handleColourModeChange = () => {
   const bodyElement = document.querySelector('body') as HTMLBodyElement
   bodyElement.dataset.bsTheme = darkMode.value ? 'dark' : 'light'
 }
+
+const placeholderLoggedIn = ref(true)
+
+const topMenuOpen = ref(false)
+const topMenuCaret = computed(() => (topMenuOpen.value ? 'bi-caret-down-fill' : 'bi-caret-down'))
 </script>
 
 <template>
@@ -21,10 +26,38 @@ const handleColourModeChange = () => {
         Miniature Eureka
       </Link>
     </div>
-    <div>
+    <div class="d-flex">
       <button type="button" class="btn btn-link">
         <i class="bi" :class="modeIcon" @click="handleColourModeChange()"></i>
       </button>
+      <div class="border rounded-pill p-2 bg-body-tertiary login-container">
+        <template v-if="placeholderLoggedIn">
+          <div class="btn-group">
+            <a
+              href="javascript:void(0)"
+              class="btn p-0 m-0 d-flex align-items-center dropdown-toggle"
+              @click="topMenuOpen = !topMenuOpen"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div
+                class="border rounded-circle bg-primary d-flex justify-content-center align-items-center text-white logged-in-circle"
+              >
+                GP
+              </div>
+              <!-- <i class="bi" :class="topMenuCaret"></i> -->
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </template>
+        <div class="" v-else>Log In</div>
+      </div>
     </div>
   </header>
 
@@ -91,5 +124,14 @@ const handleColourModeChange = () => {
 <style scoped>
 .sidebar.border.border-right.col-md-3.col-lg-2.p-0.bg-body-tertiary {
   min-height: calc(100vh - 35px);
+}
+
+.login-container {
+  width: 5rem;
+}
+
+.logged-in-circle {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 </style>
