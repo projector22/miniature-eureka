@@ -26,6 +26,14 @@ Route::get('/playground', function () {
     return Inertia::render('Playground', []);
 })->name('playground');
 
+Route::get('/login', function () {
+    return Inertia::render('Login', []);
+})->name('login');
+
+Route::post('/logout', function () {
+    return to_route('login');
+});
+
 Route::post('/save-idea', function () {
     return to_route('home');
 });

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3'
 import { links } from '@/Shared/LeftNav'
+import SiteLogo from '@/Shared/SiteLogo.vue'
 import { computed, ref } from 'vue'
 
 const darkMode = ref(true)
@@ -11,10 +12,9 @@ const handleColourModeChange = () => {
   bodyElement.dataset.bsTheme = darkMode.value ? 'dark' : 'light'
 }
 
-const placeholderLoggedIn = ref(true)
-
-const topMenuOpen = ref(false)
-const topMenuCaret = computed(() => (topMenuOpen.value ? 'bi-caret-down-fill' : 'bi-caret-down'))
+// Hard Coded for now
+const isLoggedIn = ref(false)
+const userInitials = ref('GP')
 </script>
 
 <template>
@@ -22,7 +22,7 @@ const topMenuCaret = computed(() => (topMenuOpen.value ? 'bi-caret-down-fill' : 
   <header class="navbar flex-md-nowrap shadow px-3">
     <div>
       <Link class="navbar-brand col-md-3 col-lg-2 fs-4" href="/">
-        <i class="bi bi-lightbulb-fill"></i>
+        <SiteLogo />
         Miniature Eureka
       </Link>
     </div>
@@ -30,20 +30,19 @@ const topMenuCaret = computed(() => (topMenuOpen.value ? 'bi-caret-down-fill' : 
       <button type="button" class="btn btn-link">
         <i class="bi" :class="modeIcon" @click="handleColourModeChange()"></i>
       </button>
-      <div class="border rounded-pill p-2 bg-body-tertiary login-container">
-        <template v-if="placeholderLoggedIn">
+      <template v-if="isLoggedIn">
+        <div class="border rounded-pill p-1 bg-body-tertiary login-container">
           <div class="btn-group">
             <a
               href="javascript:void(0)"
-              class="btn p-0 m-0 d-flex align-items-center dropdown-toggle"
-              @click="topMenuOpen = !topMenuOpen"
+              class="btn p-0 m-0 d-flex justify-content-center align-items-center dropdown-toggle"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <div
                 class="border rounded-circle bg-primary d-flex justify-content-center align-items-center text-white logged-in-circle"
               >
-                GP
+                {{ userInitials }}
               </div>
               <!-- <i class="bi" :class="topMenuCaret"></i> -->
             </a>
@@ -52,12 +51,15 @@ const topMenuCaret = computed(() => (topMenuOpen.value ? 'bi-caret-down-fill' : 
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
+              <li><a class="dropdown-item" href="#" @click="isLoggedIn = false">Log Out</a></li>
             </ul>
           </div>
-        </template>
-        <div class="" v-else>Log In</div>
-      </div>
+        </div>
+      </template>
+      <template v-else>
+        <!-- <button type="button" class="btn btn-outline-secondary" @click="isLoggedIn=true">Log In</button> -->
+        <Link href="/login" class="btn btn-outline-secondary">Log In</Link>
+      </template>
     </div>
   </header>
 
@@ -127,11 +129,12 @@ const topMenuCaret = computed(() => (topMenuOpen.value ? 'bi-caret-down-fill' : 
 }
 
 .login-container {
-  width: 5rem;
+  /* width: 5rem; */
 }
 
 .logged-in-circle {
-  width: 2.5rem;
-  height: 2.5rem;
+  --icon-size: 1.9rem;
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 </style>
